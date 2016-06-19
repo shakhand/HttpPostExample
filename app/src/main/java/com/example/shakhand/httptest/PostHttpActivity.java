@@ -8,6 +8,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,7 +23,7 @@ import java.net.URL;
 
 public class PostHttpActivity extends AppCompatActivity {
 
-    public static final String TAG = "POSTHTTP";
+    public static final String TAG = "POST_HTTP";
     private TextView mDisplayView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +59,12 @@ public class PostHttpActivity extends AppCompatActivity {
                 if( urlCon.getResponseCode() == 200) {
                     BufferedReader responseReader = new BufferedReader(new InputStreamReader(urlCon.getInputStream()));
                     String line;
-                    StringBuffer responseStringBuffer = new StringBuffer();
+                    StringBuilder responseStringBuffer = new StringBuilder();
                     while( (line =  responseReader.readLine() ) != null )
                     {
                         Log.i(TAG, line);
-                        responseStringBuffer.append(line+'\n');
+                        responseStringBuffer.append(line);
+                        responseStringBuffer.append('\n');
                     }
                     result = responseStringBuffer.toString();
                 }
@@ -77,8 +81,16 @@ public class PostHttpActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result)
         {
-            mDisplayView.setText( result);
+            // parse result which is a json string
+            // extract the balance field from it
+            try {
+                JSONObject jobject = new JSONObject(result);
+                String balance = jobject.getString("balanceNQT");
+                mDisplayView.setText( "balance = " + balance);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
-    };
+    }
 
 }
