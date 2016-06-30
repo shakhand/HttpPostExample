@@ -1,4 +1,4 @@
-package com.example.shakhand.httptest;
+package com.example.nxtclient.ui;
 
 import org.junit.Test;
 
