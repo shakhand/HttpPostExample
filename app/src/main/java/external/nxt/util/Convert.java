@@ -14,20 +14,16 @@
  *                                                                            *
  ******************************************************************************/
 
-package nxt.util;
-
-import nxt.crypto.Crypto;
+package external.nxt.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
-import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -248,8 +244,8 @@ public final class Convert {
         return s == null ? replaceNull : s.length() > limit ? (s.substring(0, dots ? limit - 3 : limit) + (dots ? "..." : "")) : s;
     }
 
-//    public static long parseNXT(String nxt) {
-//        return parseStringFraction(nxt, 8, Constants.MAX_BALANCE_NXT);
+//    public static long parseNXT(String external.nxt) {
+//        return parseStringFraction(external.nxt, 8, Constants.MAX_BALANCE_NXT);
 //    }
 
     private static long parseStringFraction(String value, int decimals, long maxValue) {

@@ -3,15 +3,16 @@ package com.example.nxtclient.ui;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.NotificationCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.nxtclient.model.NxtAction;
+import com.example.nxtclient.util.NxtActionAdapter;
 
 /**
  * Created by shakhand on 2016/6/30.

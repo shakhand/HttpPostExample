@@ -16,8 +16,8 @@ import com.example.nxtclient.util.Util;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import nxt.crypto.Crypto;
-import nxt.util.Convert;
+import external.nxt.crypto.Crypto;
+import external.nxt.util.Convert;
 
 /**
  * Created by shakhand on 2016/6/30.

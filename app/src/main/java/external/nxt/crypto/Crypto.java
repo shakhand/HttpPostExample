@@ -14,11 +14,11 @@
  *                                                                            *
  ******************************************************************************/
 
-package nxt.crypto;
+package external.nxt.crypto;
 
 import android.util.Log;
 
-import nxt.util.Convert;
+import external.nxt.util.Convert;
 import org.bouncycastle.crypto.CipherParameters;
 import org.bouncycastle.crypto.InvalidCipherTextException;
 import org.bouncycastle.crypto.engines.AESEngine;
